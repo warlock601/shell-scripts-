@@ -9,7 +9,7 @@ echo "Starting backup of ${backup_directory[@]}"                   # [@] will ta
 for i in "${backup_directory[@]}";                                             
 do
         sudo tar -Pczf /tmp/$i-$backup_date.tar.gz $i              # here we create a tar.gz archive using tar command for the directory $i (means passed cmd line argument)   
-
+                                                                   # also here we used date in flies to store them so that we can store backup for different dates
         if [ $? -eq 0 ];                                           # if status code is 0, means no error, successfully created archive
         then
                 echo "$i backup succeeded"
